@@ -1,9 +1,3 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
 ```bash
 npm run dev
 # or
@@ -11,28 +5,54 @@ yarn dev
 # or
 pnpm dev
 ```
+### 개발 스택
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- node/npm(LTS): 18.13.0/8.19.3
+- Next.js 13
+    - Typescript
+    - 'src/' directory
+    - import alias: '@'
+    - TanStack React Query(+ axios)
+    - React Recoil
+    - CSS post Module
+    - lint
+        - eslint
+        - Prettier
+        - husky
+- Bundler
+    - Webpack 5 (React 18 내장)
+- Other set
+    - 다국어 세팅 (한/영)
+        - next-i18next
+    - Dev port: 8000
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### 개발 환경
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- Target Device
+    - OS
+        - Window 8, 10, 11
+        - macOS Catalina
+    - Browser
+        - Edge 88.0.705.50(Anaheim) 이상 (~2019 Spartan 제외)
+        - Google Chrome 88.0.4324 이상
+        - Mozilla Firefox 85.0.2 이상
+        - Apple Safari 14.12 (611.3.10.1.5) 이상
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+      ■ IE 브라우저로 연결될 경우 Edge 브라우저로 재연결
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- JetBrains IntelliJ 2022.3.1 UE
+- API Tool
+    - Swagger (Viewer: Redoc;Standalone)
+- Issue tracking
+    - JetBrains Youtrack
+- Notification
+    - Slack
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+### 개발 패턴
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- git
+    - Trunk-based git flow 사용 할것으로 보이나 확실한 건 미정 ([참고1](https://tech.mfort.co.kr/blog/2022-08-05-trunk-based-development/), [참고2](https://www.youtube.com/watch?v=EV3FZ3cWBp8))
+- component 구조
+    - Atomic Design based
+      ([Atomic Design Pattern (feat. React, Vue, Flutter)](https://bgradecoding.tistory.com/18))
