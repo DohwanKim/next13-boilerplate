@@ -2,6 +2,7 @@ import '@/assets/style/globals.css';
 import type { AppProps } from 'next/app';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { RecoilRoot } from 'recoil';
+import { appWithTranslation } from 'next-i18next';
 
 const queryClient = new QueryClient();
 
@@ -15,4 +16,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+export default appWithTranslation(MyApp);
