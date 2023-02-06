@@ -2,8 +2,7 @@ import axios, { HeadersDefaults } from 'axios';
 
 const axiosClient = axios.create();
 
-// Replace this with our own backend base URL
-axiosClient.defaults.baseURL = 'https://api.example.org/';
+axiosClient.defaults.baseURL = 'https://spadecompany.net';
 
 type headers = {
   'Content-Type': string;

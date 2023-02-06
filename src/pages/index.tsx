@@ -2,10 +2,6 @@ import Head from 'next/head';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
-import { useQuery } from '@tanstack/react-query';
-import axiosClient from '@/apis/axiosInstance';
-import * as console from 'console';
-
 export async function getStaticProps({ locale }: never) {
   return {
     props: {
@@ -16,12 +12,6 @@ export async function getStaticProps({ locale }: never) {
 
 export default function Home() {
   const { t } = useTranslation('index');
-  const { isLoading, data } = useQuery([], async () => {
-    return await axiosClient.get('/').catch((err) => {
-      console.error(err);
-      return err;
-    });
-  });
 
   return (
     <>
