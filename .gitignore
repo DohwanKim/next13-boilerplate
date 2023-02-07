@@ -37,3 +37,9 @@ next-env.d.ts
 
 # intellJ
 /.idea
+
+# editors
+.editorconfig
+
+# Vim swap files
+*.swp
