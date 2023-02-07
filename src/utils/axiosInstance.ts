@@ -1,8 +1,9 @@
 import axios, { HeadersDefaults } from 'axios';
+import * as process from 'process';
 
 const axiosClient = axios.create();
 
-axiosClient.defaults.baseURL = 'https://spadecompany.net';
+axiosClient.defaults.baseURL = `${process.env.NEXT_PUBLIC_API_URL}/api`;
 
 type headers = {
   'Content-Type': string;
