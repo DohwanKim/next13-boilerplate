@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "node ./dev-server",
-    "build": "next build",
+    "build-dev": "next build --dotenv .env.dev",
+    "build-stage": "next build --dotenv .env.stage",
+    "build-prod": "next build --dotenv .env.prod",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --check ./src",
