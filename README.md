@@ -60,7 +60,7 @@ pnpm dev
 - Git Flow
   - Trunk-based git flow 사용 할것으로 보이나 확실한 건 미정 ([참고1](https://tech.mfort.co.kr/blog/2022-08-05-trunk-based-development/), [참고2](https://www.youtube.com/watch?v=EV3FZ3cWBp8))
 - Component Structure
-  - 컴포넌트 설계 단게부터 헤딩 중. 개인 기준에 맞출려면 생각 보다 딥하게 준비해야할듯. 
+  - 컴포넌트 설계 단계부터 헤딩 중. 뷰에서 썼던 패턴으로 이상으로 사용하고 싶은 개인 기준에 맞출려면 생각 보다 딥하게 준비해야할듯. 
   - Atomic Design based
           ([Atomic Design Pattern (feat. React, Vue, Flutter)](https://bgradecoding.tistory.com/18))
   - 참고 하여 준비 중 인 것들
