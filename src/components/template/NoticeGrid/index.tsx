@@ -1,5 +1,5 @@
 import HeaderTag from '@/components/atom/HeaderTag';
-import { createContext, ReactNode, useState } from 'react';
+import { ReactNode } from 'react';
 import SelectedNotice from '@/components/organism/SelectedNotice';
 import Notice from '@/components/organism/Notice';
 
@@ -8,12 +8,8 @@ interface Props {
   text?: string;
 }
 
-export const { Provider } = createContext({});
-
 const ProductGrid = ({ children }: Props) => {
-  const [selectedIndex, setSelectedIndex] = useState(0);
-
-  return <Provider value={selectedIndex}>{children}</Provider>;
+  return <>{children}</>;
 };
 
 ProductGrid.HeaderTag = HeaderTag;
