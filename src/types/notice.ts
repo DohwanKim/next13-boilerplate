@@ -1,7 +1,12 @@
-export type NoticeState = 'SCHEDULE' | 'BOOKING' | 'PROGRESS' | 'TERMINATION';
-export type NoticeItem = {
+export type NoticeStateType =
+  | 'SCHEDULE'
+  | 'BOOKING'
+  | 'PROGRESS'
+  | 'TERMINATION';
+export type NoticeItemType = {
   id: number;
   startDate: string;
   endDate: string;
-  state: NoticeState;
+  state: NoticeStateType;
+  title: string;
 };
