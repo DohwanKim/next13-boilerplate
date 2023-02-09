@@ -3,7 +3,6 @@
 *:not(font, i, b) {
     margin: 0;
     padding: 0;
-    font: inherit;
     color: inherit;
     -webkit-font-smoothing: antialiased;
 }

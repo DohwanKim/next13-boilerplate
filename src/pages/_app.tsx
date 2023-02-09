@@ -1,3 +1,4 @@
+import 'normalize.css/normalize.css';
 import '@/assets/style/globals.css';
 import type { AppProps } from 'next/app';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';

@@ -14,7 +14,9 @@
     - TanStack React Query
     - Axios
     - React Recoil
-    - Markup styling: CSS post Module
+    - Markup styling
+      - Normalize.css 
+      - CSS post Module
     - lint
       - eslint
       - Prettier
