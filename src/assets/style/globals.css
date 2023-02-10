@@ -127,3 +127,10 @@ select {
 select::-ms-expand {
     display: none;
 }
+
+.container {
+    max-width: 1392px;
+    padding: 0 1.4rem;
+    margin-left: auto;
+    margin-right: auto;
+}

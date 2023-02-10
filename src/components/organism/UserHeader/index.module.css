@@ -1,5 +1,14 @@
 .header {
+    border-bottom: 1px solid #333;
+}
+
+.header > div {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+}
+
+.header .logo img {
+    height: 70px;
+    object-fit: contain;
 }
