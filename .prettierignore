@@ -42,63 +42,19 @@ build/Release
 
 # Dependency directories
 node_modules/
-jspm_packages/
-
-# TypeScript v1 declaration files
-typings/
-
-# Optional npm cache directory
-.npm
-
-# Optional eslint cache
-.eslintcache
-
-# Optional REPL history
-.node_repl_history
-
-# Output of 'npm pack'
-*.tgz
-
-# Yarn Integrity file
-.yarn-integrity
 
 # dotenv environment variables file
 .env
 
 # parcel-bundler cache (https://parceljs.org/)
-.cache
-
 # next.js build output
 .next
 
-# nuxt.js build output
-.nuxt
-
-# Nuxt generate
-dist
-
-# vuepress build output
-.vuepress/dist
-
-# Serverless directories
-.serverless
-
-# IDE / Editor
+# IDE / CEditor
 .idea
 
-# Service worker
-sw.*
-
-# macOS
-.DS_Store
-
-# Vim swap files
-*.swp
-
-
 # added
-.next
 next-env.d.ts
-node_modules
 package-lock.json
 public
+custom_modules
