@@ -54,17 +54,19 @@ export default function Home() {
         </NoticeGrid.SelectedNotice>
       </NoticeGrid>
       <Notice
-        render={data?.data.content.map(
-          (item: NoticeItemType, index: number) => (
-            <NoticeListItem
-              key={index}
-              orderNumber={1}
-              title={item.title}
-              id={item.id}
-              onItemClick={onNoticeItemHandler}
-            />
-          ),
-        )}
+        render={
+          data
+            ? data?.data.content.map((item: NoticeItemType, index: number) => (
+                <NoticeListItem
+                  key={index}
+                  orderNumber={1}
+                  title={item.title}
+                  id={item.id}
+                  onItemClick={onNoticeItemHandler}
+                />
+              ))
+            : '없는데요'
+        }
       />
     </UserLayout>
   );
