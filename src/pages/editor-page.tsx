@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 
 export default function Home() {
-  const Editor = dynamic(() => import('@/components/Editor'), { ssr: false });
+  const Editor = dynamic(() => import('@/components/organism/Editor'), {
+    ssr: false,
+  });
   const [editorLoaded, setEditorLoaded] = useState(false);
   const testData = {
     title: '',

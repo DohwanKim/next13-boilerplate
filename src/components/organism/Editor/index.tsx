@@ -10,7 +10,7 @@ interface Props {
   onChange?(data: string): void;
 }
 
-const Editor = ({ isEditorLoaded, onChange, initValue = '' }: Props) => {
+const Index = ({ isEditorLoaded, onChange, initValue = '' }: Props) => {
   const [editorData, setEditorData] = useState('');
 
   useEffect(() => {
@@ -83,4 +83,4 @@ const Editor = ({ isEditorLoaded, onChange, initValue = '' }: Props) => {
   );
 };
 
-export default Editor;
+export default Index;

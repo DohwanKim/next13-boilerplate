@@ -86,7 +86,7 @@ Editor.builtinPlugins = [
   Underline,
 ];
 
-// Editor configuration.
+// Index configuration.
 Editor.defaultConfig = {
   toolbar: {
     items: [
