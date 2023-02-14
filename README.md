@@ -30,6 +30,8 @@
     - 다국어 세팅 (한/영)
       - next-i18next
     - Dev port: 8000
+    - 에디터
+      - CKEditor5 custom build (/custom_modules)
 
 ### 개발 환경
 - Target Device
