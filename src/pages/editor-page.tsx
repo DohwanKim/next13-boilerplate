@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 
+const Editor = dynamic(() => import('@/components/organism/Editor'), {
+  ssr: false,
+});
+
 export default function Home() {
-  const Editor = dynamic(() => import('@/components/organism/Editor'), {
-    ssr: false,
-  });
   const [editorLoaded, setEditorLoaded] = useState(false);
-  const testData = {
-    title: '',
-    content: '',
-  };
+  const [testData, setTestData] = useState({ content: '' });
 
   useEffect(() => {
     setEditorLoaded(true);
@@ -22,8 +20,7 @@ export default function Home() {
         isEditorLoaded={editorLoaded}
         initValue={''}
         onChange={(data) => {
-          console.log(data);
-          testData.content = data;
+          setTestData({ ...testData, content: data });
         }}
       />
     </div>
