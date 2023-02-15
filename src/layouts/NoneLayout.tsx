@@ -4,7 +4,7 @@ import { ReactNode } from 'react';
 interface Props {
   children: ReactNode;
 }
-export default function UserLayout({ children }: Props) {
+export default function NoneLayout({ children }: Props) {
   return (
     <>
       <Head>

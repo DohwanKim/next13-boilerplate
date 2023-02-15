@@ -6,7 +6,7 @@ interface Props {
   children: ReactNode;
 }
 
-export default function UserLayout({ children }: Props) {
+export default function AdminLayout({ children }: Props) {
   return (
     <>
       <Head>
