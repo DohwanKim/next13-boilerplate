@@ -38,6 +38,7 @@ export default function Home() {
 
   return (
     <UserLayout>
+      <h1>기초 Compound Pattern 예시 페이지</h1>
       <NoticeGrid>
         <NoticeGrid.HeaderTag title={t('title') || ''} type={1} />
         <NoticeGrid.SelectedNotice>
@@ -53,6 +54,7 @@ export default function Home() {
           />
         </NoticeGrid.SelectedNotice>
       </NoticeGrid>
+      <div>------------</div>
       <Notice
         render={
           data
