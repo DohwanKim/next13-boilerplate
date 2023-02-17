@@ -1,4 +1,5 @@
-import { atom, selector } from 'recoil';
+import { atom, selector, selectorFamily } from 'recoil';
+import axios from 'axios';
 
 type Auth = 'Admin' | 'User';
 
@@ -35,5 +36,26 @@ export const foodPriceSum = selector({
     const foodList = get(foods);
 
     return foodList.reduce((prev, cur) => prev + cur.price, 0);
+  },
+});
+
+export const randomDog = selector({
+  key: 'randomDog',
+  get: async () => {
+    const response = await axios.get('https://dog.ceo/api/breeds/image/random');
+    const data = response.data;
+
+    return data.message;
+  },
+});
+
+export const randomDogByBreed = selectorFamily({
+  key: 'randomDogByBreed',
+  get: (breed: string) => async () => {
+    const response = await axios.get(
+      `https://dog.ceo/api/breed/${breed}/images/random`,
+    );
+    const data = response.data;
+    return data.message;
   },
 });

@@ -1,7 +1,12 @@
 import UserLayout from '@/layouts/UserLayout';
 import { useRecoilState, useRecoilValue, useResetRecoilState } from 'recoil';
 import { foodPriceSum, foods, IFood, IUser, user } from '@/store/atom';
-import { useRef } from 'react';
+import React, { useRef } from 'react';
+import dynamic from 'next/dynamic';
+
+const DogImage = dynamic(() => import('@/components/atom/DogImage'), {
+  ssr: false,
+});
 
 export default function RecoilEx() {
   const [userData] = useRecoilState<IUser>(user);
@@ -10,7 +15,6 @@ export default function RecoilEx() {
   const resetFoodData = useResetRecoilState(foods);
   const inputTitleRef = useRef<HTMLInputElement>(null);
   const inputPriceRef = useRef<HTMLInputElement>(null);
-  // TODO: 비동기 예시 추가 + suspense
 
   const addPriceHandler = () => {
     const updateData: IFood = {
@@ -34,14 +38,25 @@ export default function RecoilEx() {
         <h3>리코일 값 예시 - 유저 정보</h3>
         <p>{JSON.stringify(userData)}</p>
       </div>
+      <br />
+      <br />
       <div>
-        <h3>리코일 값 예시 - 음식</h3>
+        <h2>리코일 값 예시 - 음식</h2>
         <div>
-          <h3>모든 음식의 가격 합: {foodPriceTotal}</h3>
+          <p>
+            [리코일 selector를 통해 연산 된 데이터]
+            <br />
+            모든 음식의 가격 합: {foodPriceTotal}
+          </p>
+          <br />
           <h4>음식 추가</h4>
           <div>
-            <input type="text" ref={inputTitleRef} />
-            <input type="text" ref={inputPriceRef} />
+            <input type="text" ref={inputTitleRef} placeholder={'음식 이름'} />
+            <input
+              type="text"
+              ref={inputPriceRef}
+              placeholder={'가격(숫자만 입력)'}
+            />
           </div>
           <div>
             <button type={'button'} onClick={addPriceHandler}>
@@ -60,6 +75,15 @@ export default function RecoilEx() {
                 </div>
               ))}
           </div>
+        </div>
+      </div>
+      <div>
+        <h2>리코일 비동기 동작 - 랜덤 이미지 들고오기</h2>
+        <div>
+          <p>파라미터를 넣어 쓰는 예시</p>
+          <DogImage breed={'beagle'} />
+          <DogImage breed={'pug'} />
+          <DogImage breed={'shiba'} />
         </div>
       </div>
       <style jsx>{`
