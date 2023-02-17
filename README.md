@@ -60,6 +60,11 @@ yarn dev
 pnpm dev
 ```
 
+### 페이지 정보
+<code>/</code>: Compound Pattern 예시 페이지<br>
+<code>/editor-page</code>: CKEditor5 예시 페이지<br>
+<code>/recoil-ex</code>: Recoil 예시 페이지
+
 ### 개발 패턴
 - Git Flow
   - Trunk-based git flow 사용 할것으로 보이나 확실한 건 미정 ([참고1](https://tech.mfort.co.kr/blog/2022-08-05-trunk-based-development/), [참고2](https://www.youtube.com/watch?v=EV3FZ3cWBp8))
