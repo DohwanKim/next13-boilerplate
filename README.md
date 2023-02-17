@@ -32,6 +32,9 @@
     - Dev port: 8000
     - 에디터
       - CKEditor5 custom build (/custom_modules)
+    - 기타플러그인
+      - Day.js: 날짜관리
+      - 
 
 ### 개발 환경
 - Target Device
@@ -80,5 +83,5 @@ pnpm dev
 Nuxt.js(2) -> Next.js(13) 이주 중...<br>
 분명 비슷한 세팅으로 옮기는 중인데 세팅 전 구울게 너무 많아서 고통 받는 중...
 
-## 라이센스 <hr>
+## 라이센스
 - MIT License
