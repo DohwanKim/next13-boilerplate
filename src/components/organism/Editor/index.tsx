@@ -10,12 +10,30 @@ interface Props {
   onChange?(data: string): void;
 }
 
+type embedType = 'youtube' | 'vimeo' | 'youku';
+
 const Editor = ({ isEditorLoaded, onChange, initValue = '' }: Props) => {
   const [editorData, setEditorData] = useState('');
 
   useEffect(() => {
     setEditorData(initValue);
   }, [initValue]);
+
+  const getEmbedMarkup = (type: embedType, id: string): string => {
+    const baseUrl =
+      type === 'youtube'
+        ? 'https://www.youtube.com/embed/'
+        : type === 'vimeo'
+        ? 'https://player.vimeo.com/video/'
+        : 'https://player.youku.com/embed/';
+
+    return `<div style="position: relative; height: 0; padding-bottom: 56.2493%;">
+              <iframe src="${baseUrl}${id}"
+                  style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+              </iframe>
+            </div>`;
+  };
 
   const customUploadAdapter = (loader: { file: Promise<string | Blob> }) => {
     return {
@@ -72,6 +90,30 @@ const Editor = ({ isEditorLoaded, onChange, initValue = '' }: Props) => {
           config={{
             mediaEmbed: {
               previewsInData: true,
+              allowedProviders: ['youtube', 'vimeo', 'youku'],
+              providers: [
+                {
+                  name: 'youtube',
+                  url: /^https?:\/\/(www\.)?youtube\.com\/watch\?v=([a-zA-Z0-9_-]{11})/,
+                  html: (match: string[]) => {
+                    return getEmbedMarkup('youtube', match[2]);
+                  },
+                },
+                {
+                  name: 'vimeo',
+                  url: /^https?:\/\/(player\.)?vimeo\.com\/(video\/)?([0-9]+)$/,
+                  html: (match: string[]) => {
+                    return getEmbedMarkup('vimeo', match[3]);
+                  },
+                },
+                {
+                  name: 'youku',
+                  url: /^(https?:\/\/)?(v|player)\.youku\.com\/(v_show|player\.php|embed)(\/sid)?\/(id_)?(\w+)|(\w+)/,
+                  html: (match: string[]) => {
+                    return getEmbedMarkup('youku', match[6]);
+                  },
+                },
+              ],
             },
             extraPlugins: [uploadPlugin],
           }}
