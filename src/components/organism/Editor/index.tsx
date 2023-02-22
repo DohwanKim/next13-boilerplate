@@ -88,6 +88,7 @@ const Editor = ({ isEditorLoaded, onChange, initValue = '' }: Props) => {
             }
           }}
           config={{
+            extraPlugins: [uploadPlugin],
             mediaEmbed: {
               previewsInData: true,
               allowedProviders: ['youtube', 'vimeo', 'youku'],
@@ -115,7 +116,6 @@ const Editor = ({ isEditorLoaded, onChange, initValue = '' }: Props) => {
                 },
               ],
             },
-            extraPlugins: [uploadPlugin],
           }}
         />
       ) : (

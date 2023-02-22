@@ -1,0 +1,10 @@
+@import "@/assets/fonts/inter/inter.css";
+@import "@/assets/fonts/noto_sans_kr/noto_sans_kr.css";
+
+html,
+body {
+    font-family: 'Inter', 'Noto Sans KR', -apple-system,
+    BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue,
+    helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+    -webkit-overflow-scrolling: touch;
+}

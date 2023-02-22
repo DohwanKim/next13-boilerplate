@@ -1,4 +1,5 @@
 import 'normalize.css/normalize.css';
+import '@/assets/style/font.css';
 import '@/assets/style/globals.css';
 import type { AppProps } from 'next/app';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -11,12 +12,14 @@ const queryClient = new QueryClient();
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <RecoilRoot>
-      <QueryClientProvider client={queryClient}>
-        <Component {...pageProps} />
-        {process.env.NEXT_PUBLIC_IS_DEV ? <ReactQueryDevtools /> : null}
-      </QueryClientProvider>
-    </RecoilRoot>
+    <>
+      <RecoilRoot>
+        <QueryClientProvider client={queryClient}>
+          <Component {...pageProps} />
+          {process.env.NEXT_PUBLIC_IS_DEV ? <ReactQueryDevtools /> : null}
+        </QueryClientProvider>
+      </RecoilRoot>
+    </>
   );
 }
 
