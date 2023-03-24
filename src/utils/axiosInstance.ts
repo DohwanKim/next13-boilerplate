@@ -1,9 +1,15 @@
-import axios, { HeadersDefaults } from 'axios';
-import * as process from 'process';
+import axios, { HeadersDefaults } from "axios";
+// import https from 'https';
 
-const axiosClient = axios.create();
+const axiosClient = axios.create({
+  // httpsAgent: new https.Agent({
+  //   rejectUnauthorized: false
+  // }),
+  // baseURL: `${process.env.NEXT_PUBLIC_API_URL}/api`,
+  withCredentials: true,
+});
 
-axiosClient.defaults.baseURL = `${process.env.NEXT_PUBLIC_API_URL}/api`;
+// axiosClient.defaults.baseURL = `${process.env.NEXT_PUBLIC_API_URL}/api`;
 
 type headers = {
   'Content-Type': string;

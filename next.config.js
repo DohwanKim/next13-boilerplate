@@ -7,7 +7,7 @@ const nextConfig = {
     return [
       {
         source: '/api/:path*',
-        destination: 'https://spadecompany.net',
+        destination: 'http://localhost/api/:path*',
       },
     ];
   },
