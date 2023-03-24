@@ -62,7 +62,7 @@ export default function Home() {
 
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const cookieHeader = Object.entries(context.req.cookies)
+  /*const cookieHeader = Object.entries(context.req.cookies)
     .map(([key, value]) => {
       return `${key}=${value}`;
     })
@@ -75,14 +75,14 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     }
   }).then(res => {
     console.log(res.status, res.statusText);
-    const cookies = new Cookies(res.request, res);
-    console.log(cookies);
+    const cookies = new Cookies(res.request, res.config);
+    console.log(cookies.getHeader('HDBPRT'));
     // const cookies = new Cookies(context.req, context.res);
-    /*if (res.headers["set-cookie"]) {
+    /!*if (res.headers["set-cookie"]) {
       context.res.setHeader("set-cookie", res.headers["set-cookie"].join(","));
-    }*/
+    }*!/
   }).catch(err => {
-  });
+  });*/
 
   return {
     props: {}

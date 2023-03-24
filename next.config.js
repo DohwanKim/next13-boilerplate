@@ -7,7 +7,7 @@ const nextConfig = {
     return [
       {
         source: '/api/:path*',
-        destination: 'http://localhost/api/:path*',
+        destination: 'https://stage-api.hd-brandbay.com/api/:path*',
       },
     ];
   },
